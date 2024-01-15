@@ -12,7 +12,7 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 // TDD(Test-Driven Development)
 // It is a software development methodology where tests are written before the actual code that needs to be implemented.
 
-public class memoryMemberRepositoryTest {
+public class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
 
