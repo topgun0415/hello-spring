@@ -2,19 +2,24 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+// This service class is to do something with memoryMemberRepository.
 public class MemberService {
 
-    private final MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+
+    }
 
     /**
      * Member Join
      */
-    public Long Join(Member member) {
+    public Long join(Member member) {
 
         validateDuplicateMember(member);
         memberRepository.save(member);
@@ -45,5 +50,7 @@ public class MemberService {
             throw new IllegalStateException("There already has a same member");
         });
     }
+
+
 
 }
