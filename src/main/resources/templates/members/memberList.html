@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns: th="https//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>see our member!</title>
+</head>
+<body>
+
+<div class="Container">
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="member : ${members}">
+            <td th:text="${member.getId()}"></td>
+            <td th:text="${member.getName()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
